@@ -15,7 +15,9 @@
   --white:#ffffff;
   --shadow:0 4px 14px rgba(22,56,56,.10);
   --radius:12px;
-  --focus:#d4a24c;
+  /* Focus rings (WCAG 2.2 SC 1.4.11, >=3:1): dark ring on light surfaces, light ring on dark surfaces */
+  --focus:#163838;          /* 10.7-12.7:1 on cream, cream-warm, white, eucalyptus-soft, card tints */
+  --focus-on-dark:#f0d78c;  /* 11.3:1 plum, 6.6:1 teal-deep, 4.4:1 teal */
   --link:#0a5c8a;
 }
 *{box-sizing:border-box}
@@ -31,8 +33,9 @@ body{
 a{color:var(--link);text-decoration:underline;text-underline-offset:.15em}
 a:hover{color:var(--teal-deep)}
 a:focus{outline:3px solid var(--focus);outline-offset:2px}
+.crisis a:focus,header.site a:focus,footer a:focus,.number a:focus{outline-color:var(--focus-on-dark)}
 .skip{position:absolute;left:-999px;top:0;z-index:20}
-.skip:focus{left:8px;top:8px;background:var(--white);color:var(--ink);padding:.5rem .75rem;border-radius:6px;outline:3px solid var(--focus)}
+.skip:focus{left:8px;top:8px;background:var(--white);color:var(--ink);padding:.5rem .75rem;border-radius:6px;outline:3px solid var(--focus);outline-offset:0;box-shadow:0 0 0 6px var(--focus-on-dark)} /* two-tone ring: readable over the plum crisis bar and over cream */
 
 /* Crisis — deep plum, gold numbers (WCAG AA) */
 .crisis{background:var(--plum);color:var(--cream-warm);padding:1rem 1.25rem}
@@ -40,7 +43,8 @@ a:focus{outline:3px solid var(--focus);outline-offset:2px}
 .crisis ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.35rem 1.35rem}
 .crisis li{color:var(--cream-warm)}
 .crisis a{color:var(--gold-light);font-weight:800;text-decoration:underline;text-underline-offset:.12em}
-.crisis a:hover,.crisis a:focus{color:var(--white);outline-color:var(--gold)}
+.crisis a:hover,.crisis a:focus{color:var(--white)}
+.crisis a:focus{outline-color:var(--focus-on-dark)}
 
 /* Header / nav — teal */
 header.site{
@@ -52,11 +56,12 @@ header.site{
 }
 .brand{display:inline-block;line-height:0;text-decoration:none;border-radius:8px}
 .brand img{height:56px;width:auto;display:block;background:var(--white);border-radius:8px;padding:.2rem .45rem}
-.brand:focus,.brand:hover{outline:3px solid var(--gold);outline-offset:3px}
+.brand:hover{outline:3px solid var(--gold);outline-offset:3px}
+.brand:focus{outline:3px solid var(--focus-on-dark);outline-offset:3px}
 nav ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.4rem 1.1rem}
 nav a{color:var(--cream);font-weight:600;text-decoration:none;padding:.2rem 0;border-bottom:3px solid transparent}
 nav a:hover{color:var(--gold-light);border-bottom-color:var(--gold)}
-nav a:focus{outline:3px solid var(--gold);outline-offset:3px;color:var(--white)}
+nav a:focus{outline:3px solid var(--focus-on-dark);outline-offset:3px;color:var(--white)}
 nav a[aria-current]{color:var(--gold-light);border-bottom-color:var(--gold);font-weight:800}
 
 /* Main measure */
@@ -99,7 +104,8 @@ h3{font-size:1.15rem;margin:0 0 .4rem}
 .number p{margin:.35rem 0;color:var(--cream);max-width:none}
 .number p.big{font-size:1.55rem;font-weight:800;margin:.4rem 0;color:var(--white);letter-spacing:.01em}
 .number a{color:var(--gold-light)}
-.number a:focus{outline-color:var(--gold-light)}
+.number a:focus{outline-color:var(--focus-on-dark)}
+.number p.ai-note{margin-top:.75rem;padding-top:.6rem;border-top:1px solid rgba(255,254,248,.35)}
 
 /* Help topic cards */
 .help-topics{margin:1.5rem 0 2rem}
@@ -175,8 +181,11 @@ footer{
 footer p{max-width:48rem;margin:.4rem auto;line-height:1.55}
 footer a{color:var(--gold-light);font-weight:700}
 footer a:hover{color:var(--white)}
-footer a:focus{outline-color:var(--gold)}
+footer a:focus{outline-color:var(--focus-on-dark)}
 footer strong{color:var(--white)}
+
+/* Notice (e.g. "not open yet") */
+.notice{background:var(--cream-warm);border-left:6px solid var(--teal);border-radius:0 var(--radius) var(--radius) 0;padding:1rem 1.15rem;max-width:65ch}
 
 /* Lists */
 main ul:not(.cards){padding-left:1.2rem}
