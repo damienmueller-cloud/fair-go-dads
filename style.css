@@ -233,3 +233,40 @@ main ul:not(.cards) li{margin:.4rem 0}
 .crisis.crisis--lower ul{padding-left:0}
 .crisis.crisis--lower li{margin:0}
 .crisis.crisis--lower p{margin:.75rem 0 0;color:var(--cream-warm)}
+
+/* ===== i18n: language picker, translation notice, scripts and RTL ===== */
+.lang-picker{background:var(--cream-warm);border-bottom:3px solid var(--gold);padding:.55rem 1.25rem .65rem}
+.lang-picker__label{margin:0 0 .35rem;font-weight:800;font-size:1rem;color:var(--teal-dark)}
+.lang-picker ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem .45rem}
+.lang-picker a{display:inline-flex;align-items:center;min-height:2.4rem;padding:.15rem .75rem;border:2px solid var(--teal);border-radius:999px;background:var(--white);color:var(--teal-deep);font-weight:700;font-size:1.05rem;line-height:1.2;text-decoration:none}
+.lang-picker a:hover{background:var(--eucalyptus-soft);color:var(--teal-dark)}
+.lang-picker a:focus{outline:3px solid var(--focus);outline-offset:2px}
+.lang-picker a[aria-current]{background:var(--teal-deep);border-color:var(--teal-deep);color:var(--white)}
+@media(max-width:36rem){.lang-picker{padding:.5rem .9rem .6rem}.lang-picker ul{gap:.35rem .35rem}.lang-picker a{font-size:1rem;padding:.1rem .6rem}}
+.i18n-notice{background:var(--white);border:2px solid var(--teal);border-radius:var(--radius);padding:.85rem 1.1rem;margin:0 0 1.5rem;font-size:.95rem}
+.i18n-notice p{margin:.3rem 0;max-width:none}
+.i18n-notice strong{color:var(--teal-dark)}
+
+@font-face{font-family:"FGD Noto Sans Gurmukhi";src:url(/fonts/noto-sans-gurmukhi.woff2) format("woff2");font-weight:400 900;font-display:swap;unicode-range:U+0A00-0A7F,U+0964-0965,U+200C-200D,U+25CC}
+@font-face{font-family:"FGD Noto Sans Devanagari";src:url(/fonts/noto-sans-devanagari.woff2) format("woff2");font-weight:400 900;font-display:swap;unicode-range:U+0900-097F,U+1CD0-1CFF,U+200C-200D,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF}
+:lang(zh-Hans){font-family:system-ui,-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC","Source Han Sans SC",sans-serif}
+:lang(zh-Hant){font-family:system-ui,-apple-system,"PingFang TC","PingFang HK","Microsoft JhengHei","Noto Sans CJK TC","Noto Sans TC","Noto Sans CJK HK","Source Han Sans TC",sans-serif}
+:lang(ar){font-family:system-ui,-apple-system,"Segoe UI","SF Arabic","Geeza Pro","Noto Sans Arabic","Noto Naskh Arabic",Tahoma,Arial,sans-serif}
+:lang(pa){font-family:system-ui,-apple-system,"Nirmala UI","Gurmukhi MN","Mukta Mahee","Noto Sans Gurmukhi","Raavi","FGD Noto Sans Gurmukhi",sans-serif}
+:lang(hi){font-family:system-ui,-apple-system,"Nirmala UI","Kohinoor Devanagari","Noto Sans Devanagari","Mangal","FGD Noto Sans Devanagari",sans-serif}
+html:lang(ar) body,html:lang(pa) body,html:lang(hi) body{line-height:1.8}
+html:lang(zh-Hans) body,html:lang(zh-Hant) body{line-height:1.7}
+:lang(ar) h1,:lang(ar) h2,:lang(ar) h3,:lang(ar) .badge,:lang(zh-Hans) .badge,:lang(zh-Hant) .badge,:lang(pa) .badge,:lang(hi) .badge,:lang(zh-Hans) h1,:lang(zh-Hant) h1{letter-spacing:0}
+:lang(ar) h1,:lang(ar) h2,:lang(ar) h3,:lang(pa) h1,:lang(pa) h2,:lang(hi) h1,:lang(hi) h2{line-height:1.45}
+
+/* Right-to-left (Arabic) */
+[dir=rtl] .skip{left:auto;right:-999px}
+[dir=rtl] .skip:focus{left:auto;right:8px}
+[dir=rtl] .note{border-left:0;border-right:6px solid var(--gold);border-radius:var(--radius) 0 0 var(--radius)}
+[dir=rtl] .notice{border-left:0;border-right:6px solid var(--teal);border-radius:var(--radius) 0 0 var(--radius)}
+[dir=rtl] main ul:not(.cards){padding-left:0;padding-right:1.2rem}
+[dir=rtl] .hero h1{left:auto;right:3%}
+[dir=rtl] a[href^="tel:"]:not(.btn),[dir=rtl] a[href^="mailto:"]{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] .btn{unicode-bidi:isolate}
+/* Very narrow phones (<368px): shrink the big helpline number so it never forces sideways scrolling */
+@media(max-width:23rem){.helpline-hero__number a,.helpline-hero--compact .helpline-hero__number a{font-size:10vw}}

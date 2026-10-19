@@ -39,7 +39,7 @@ var FGD_HELPLINE = {
       btn.textContent = btn.getAttribute("data-live-label") || "Talk to us online";
       btn.addEventListener("click", function () {
         loadWidget();
-        btn.textContent = "Opening the chat…";
+        btn.textContent = btn.getAttribute("data-opening-label") || "Opening the chat…";
         setTimeout(function () { btn.textContent = btn.getAttribute("data-live-label") || "Talk to us online"; }, 4000);
       });
     });
