@@ -33,6 +33,7 @@ var FGD_HELPLINE = {
     document.documentElement.classList.add("helpline-live");
     each("[data-helpline-badge]", function (el) { el.parentNode.removeChild(el); });
     each("[data-live-text]", function (el) { el.textContent = el.getAttribute("data-live-text"); });
+    each("[data-live-content]", function (el) { el.setAttribute("content", el.getAttribute("data-live-content")); });
     each("[data-helpline-online]", function (btn) {
       btn.disabled = false;
       btn.removeAttribute("aria-disabled");
