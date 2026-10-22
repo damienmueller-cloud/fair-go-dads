@@ -10,6 +10,7 @@
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="/style.css" rel="stylesheet"/>
 <script defer="" src="/helpline-config.js"></script>
+<script defer="" src="/menu.js"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://fairgodads.com.au/#organization","name":"Fair Go Dads","url":"https://fairgodads.com.au/","logo":"https://fairgodads.com.au/images/logo-400.jpg","description":"Free Australian family law information website and helpline for separated dads. General information only, not legal advice and not a law firm.","email":"help@fairgodads.com.au","areaServed":{"@type":"Country","name":"Australia"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"help@fairgodads.com.au","areaServed":"AU","availableLanguage":"English"}}</script>
 <!-- i18n:hreflang -->
 <link rel="alternate" hreflang="en-AU" href="https://fairgodads.com.au/wellbeing.html">
@@ -29,20 +30,21 @@
 <body>
 <a class="skip" href="#main">ਮੁੱਖ ਸਮੱਗਰੀ 'ਤੇ ਜਾਓ</a>
 <p class="danger-strip">ਹੁਣੇ ਖ਼ਤਰੇ ਵਿੱਚ ਹੋ? <a href="tel:000">000</a> 'ਤੇ ਫ਼ੋਨ ਕਰੋ</p>
-<!-- i18n:picker -->
-<nav class="lang-picker" aria-label="ਭਾਸ਼ਾ Language"><p class="lang-picker__label"><span aria-hidden="true">🌐</span> ਭਾਸ਼ਾ Language</p><ul><li><a href="/wellbeing.html" lang="en-AU" hreflang="en-AU">English</a></li><li><a href="/zh/wellbeing.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></li><li><a href="/ar/wellbeing.html" lang="ar" hreflang="ar">العربية</a></li><li><a href="/vi/wellbeing.html" lang="vi" hreflang="vi">Tiếng Việt</a></li><li><a href="/zh-hant/wellbeing.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></li><li><a href="/pa/wellbeing.html" lang="pa" hreflang="pa" aria-current="true">ਪੰਜਾਬੀ</a></li><li><a href="/el/wellbeing.html" lang="el" hreflang="el">Ελληνικά</a></li><li><a href="/it/wellbeing.html" lang="it" hreflang="it">Italiano</a></li><li><a href="/tl/wellbeing.html" lang="fil" hreflang="tl">Filipino</a></li><li><a href="/hi/wellbeing.html" lang="hi" hreflang="hi">हिन्दी</a></li><li><a href="/es/wellbeing.html" lang="es" hreflang="es">Español</a></li></ul></nav>
-<!-- /i18n:picker -->
 <header class="site"><a class="brand" href="/pa/"><picture><source srcset="/images/logo-400.webp" type="image/webp"/><img alt="Fair Go Dads" decoding="async" height="249" src="/images/logo-400.jpg" width="400"/></picture></a>
-<nav aria-label="ਮੁੱਖ ਮੀਨੂ"><ul><li><a href="/pa/">ਮੁੱਖ ਪੰਨਾ</a></li><li><a href="/pa/about.html">ਸਾਡੇ ਬਾਰੇ</a></li><li><a href="/pa/help.html">ਮਦਦ ਲਓ</a></li><li><a aria-current="page" href="/pa/wellbeing.html">ਆਪਣਾ ਧਿਆਨ ਰੱਖੋ</a></li><li><a href="/pa/disclaimer.html">ਬੇਦਾਅਵਾ</a></li><li><a href="/pa/privacy.html">ਪਰਦੇਦਾਰੀ</a></li><li><a href="/pa/sources.html">ਸਰੋਤ</a></li></ul></nav></header>
+<!-- i18n:picker -->
+<nav class="lang-picker" aria-label="ਭਾਸ਼ਾ Language"><details><summary class="lang-picker__label"><span aria-hidden="true">🌐</span> ਭਾਸ਼ਾ Language</summary><ul><li><a href="/wellbeing.html" lang="en-AU" hreflang="en-AU">English</a></li><li><a href="/zh/wellbeing.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></li><li><a href="/ar/wellbeing.html" lang="ar" hreflang="ar">العربية</a></li><li><a href="/vi/wellbeing.html" lang="vi" hreflang="vi">Tiếng Việt</a></li><li><a href="/zh-hant/wellbeing.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></li><li><a href="/pa/wellbeing.html" lang="pa" hreflang="pa" aria-current="true">ਪੰਜਾਬੀ</a></li><li><a href="/el/wellbeing.html" lang="el" hreflang="el">Ελληνικά</a></li><li><a href="/it/wellbeing.html" lang="it" hreflang="it">Italiano</a></li><li><a href="/tl/wellbeing.html" lang="fil" hreflang="tl">Filipino</a></li><li><a href="/hi/wellbeing.html" lang="hi" hreflang="hi">हिन्दी</a></li><li><a href="/es/wellbeing.html" lang="es" hreflang="es">Español</a></li></ul></details></nav>
+<!-- /i18n:picker -->
+<input aria-label="ਮੀਨੂ" class="menu-toggle" id="menu-toggle" type="checkbox"/><label class="menu-btn" data-i18n-skip="" for="menu-toggle"><span aria-hidden="true">☰</span> <span class="menu-btn__text">ਮੀਨੂ</span></label><button aria-controls="main-nav" aria-expanded="false" class="menu-btn menu-btn--js" data-i18n-skip="" hidden="" type="button"><span aria-hidden="true">☰</span> <span class="menu-btn__text">ਮੀਨੂ</span></button>
+<nav aria-label="ਮੁੱਖ ਮੀਨੂ" id="main-nav"><ul><li><a href="/pa/">ਮੁੱਖ ਪੰਨਾ</a></li><li><a href="/pa/about.html">ਸਾਡੇ ਬਾਰੇ</a></li><li><a href="/pa/help.html">ਮਦਦ ਲਓ</a></li><li><a aria-current="page" href="/pa/wellbeing.html">ਆਪਣਾ ਧਿਆਨ ਰੱਖੋ</a></li><li><a href="/pa/disclaimer.html">ਬੇਦਾਅਵਾ</a></li><li><a href="/pa/privacy.html">ਪਰਦੇਦਾਰੀ</a></li><li><a href="/pa/sources.html">ਸਰੋਤ</a></li></ul></nav></header>
 <main id="main">
 <section aria-label="Fair Go Dads ਮੁਫ਼ਤ ਹੈਲਪਲਾਈਨ" class="helpline-hero helpline-hero--compact">
-<p class="helpline-hero__title">ਵੱਖ ਹੋ ਰਹੇ ਪਿਤਾਵਾਂ ਲਈ ਮੁਫ਼ਤ ਹੈਲਪਲਾਈਨ <span class="badge" data-helpline-badge="">ਜਲਦੀ ਖੁੱਲ੍ਹ ਰਹੀ ਹੈ</span></p>
+<p class="helpline-hero__title">ਵੱਖ ਹੋ ਰਹੇ ਪਿਤਾਵਾਂ ਲਈ ਮੁਫ਼ਤ ਹੈਲਪਲਾਈਨ</p>
 <p class="helpline-hero__number"><a aria-label="Fair Go Dads ਹੈਲਪਲਾਈਨ ਨੂੰ 0485 000 344 'ਤੇ ਫ਼ੋਨ ਕਰੋ" href="tel:+61485000344">0485 000 344</a></p>
 <div class="helpline-hero__actions">
 <a class="btn btn--call" href="tel:+61485000344">0485 000 344 'ਤੇ ਫ਼ੋਨ ਕਰੋ</a>
 <button aria-disabled="true" class="btn btn--online" data-helpline-online="" data-live-label="ਸਾਡੇ ਨਾਲ ਆਨਲਾਈਨ ਗੱਲ ਕਰੋ" data-opening-label="ਗੱਲਬਾਤ ਖੁੱਲ੍ਹ ਰਹੀ ਹੈ…" disabled="" type="button">ਸਾਡੇ ਨਾਲ ਆਨਲਾਈਨ ਗੱਲ ਕਰੋ <span class="badge badge--soft" data-helpline-badge="">ਜਲਦੀ ਖੁੱਲ੍ਹ ਰਹੀ ਹੈ</span></button>
 </div>
-<p class="helpline-hero__status"><span data-live-text="ਮੁਫ਼ਤ, 24/7। ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ, ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ।">ਸਾਡੀ ਮੁਫ਼ਤ ਹੈਲਪਲਾਈਨ ਦੀ ਜਾਂਚ ਚੱਲ ਰਹੀ ਹੈ ਅਤੇ ਇਹ ਜਲਦੀ ਖੁੱਲ੍ਹੇਗੀ।</span> ਐਮਰਜੈਂਸੀ ਵਿੱਚ <a href="tel:000">000</a> 'ਤੇ ਫ਼ੋਨ ਕਰੋ।</p>
+<p class="helpline-hero__status"><span data-live-text="ਮੁਫ਼ਤ, 24/7। ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ, ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ।">ਮੁਫ਼ਤ, 24/7। ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ, ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ।</span> ਐਮਰਜੈਂਸੀ ਵਿੱਚ <a href="tel:000">000</a> 'ਤੇ ਫ਼ੋਨ ਕਰੋ।</p>
 <p class="ai-note">Fair Go Dads ਇੱਕ ਸਵੈਚਾਲਿਤ AI (ਆਰਟੀਫੀਸ਼ੀਅਲ ਇੰਟੈਲੀਜੈਂਸ) ਸਹਾਇਕ ਵਰਤਦਾ ਹੈ। ਇਹ ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ ਦਿੰਦਾ ਹੈ।</p>
 </section><aside aria-label="ਅਨੁਵਾਦ ਬਾਰੇ ਨੋਟ" class="i18n-notice"><p><strong>ਮਸ਼ੀਨ ਦੀ ਮਦਦ ਨਾਲ ਕੀਤਾ ਅਨੁਵਾਦ।</strong> ਇਸ ਪੰਨੇ ਦਾ ਅਨੁਵਾਦ ਮਸ਼ੀਨੀ ਅਨੁਵਾਦ (ਆਰਟੀਫੀਸ਼ੀਅਲ ਇੰਟੈਲੀਜੈਂਸ) ਦੀ ਮਦਦ ਨਾਲ ਕੀਤਾ ਗਿਆ ਹੈ ਅਤੇ ਹਾਲੇ ਕਿਸੇ ਪੇਸ਼ੇਵਰ ਅਨੁਵਾਦਕ ਨੇ ਇਸ ਦੀ ਜਾਂਚ ਨਹੀਂ ਕੀਤੀ। ਜੇ ਕੋਈ ਫ਼ਰਕ ਹੋਵੇ, ਤਾਂ ਅੰਗਰੇਜ਼ੀ ਰੂਪ ਹੀ ਮੰਨਿਆ ਜਾਵੇਗਾ। <a href="/wellbeing.html" lang="en-AU">ਇਹ ਪੰਨਾ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਪੜ੍ਹੋ (English)</a></p><p>Fair Go Dads ਹੈਲਪਲਾਈਨ ਇਸ ਸਮੇਂ ਸਿਰਫ਼ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਹੈ। ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਮਦਦ ਲਈ TIS National (ਅਨੁਵਾਦ ਅਤੇ ਦੁਭਾਸ਼ੀਆ ਸੇਵਾ) ਨੂੰ <bdi dir="ltr"><a href="tel:131450">131 450</a></bdi> 'ਤੇ ਫ਼ੋਨ ਕਰੋ (ਦਿਨ ਦੇ 24 ਘੰਟੇ)। ਉਹਨਾਂ ਨੂੰ ਕਹੋ ਕਿ ਉਹ ਦੁਭਾਸ਼ੀਏ ਦੀ ਮਦਦ ਨਾਲ ਤੁਹਾਨੂੰ Legal Aid (ਕਾਨੂੰਨੀ ਸਹਾਇਤਾ), MensLine ਜਾਂ 1800RESPECT ਵਰਗੀ ਕਿਸੇ ਸੇਵਾ ਨਾਲ ਜੋੜ ਦੇਣ; ਉਹਨਾਂ ਨੂੰ ਸੇਵਾ ਦਾ ਨਾਮ ਅਤੇ ਫ਼ੋਨ ਨੰਬਰ ਦੱਸੋ। ਇਹ ਆਮ ਤੌਰ 'ਤੇ ਤੁਹਾਡੇ ਲਈ ਮੁਫ਼ਤ ਹੁੰਦਾ ਹੈ।</p></aside>
 <h1>ਵੱਖ ਹੋਣ ਦੌਰਾਨ ਆਪਣਾ ਧਿਆਨ ਰੱਖੋ</h1>
@@ -76,5 +78,6 @@
 </main>
 <footer><p><strong>ਸਿਰਫ਼ ਆਮ ਜਾਣਕਾਰੀ, ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ।</strong> Fair Go Dads ਕੋਈ ਕਾਨੂੰਨੀ ਫ਼ਰਮ ਨਹੀਂ ਹੈ। ਆਪਣੀ ਸਥਿਤੀ ਬਾਰੇ ਸਲਾਹ ਲਈ ਕਿਸੇ ਵਕੀਲ ਜਾਂ Legal Aid (ਕਾਨੂੰਨੀ ਸਹਾਇਤਾ) ਨਾਲ ਗੱਲ ਕਰੋ। <a href="/pa/disclaimer.html">ਬੇਦਾਅਵਾ</a> · <a href="/pa/privacy.html">ਪਰਦੇਦਾਰੀ</a></p>
 <p>ਜਾਣਕਾਰੀ 19 ਅਕਤੂਬਰ 2026 ਤੱਕ ਦੀ ਹੈ।</p></footer>
+<a class="call-bar" href="tel:+61485000344">0485 000 344 'ਤੇ ਫ਼ੋਨ ਕਰੋ</a>
 </body>
 </html>

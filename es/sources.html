@@ -10,6 +10,7 @@
 <link href="/images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="/style.css" rel="stylesheet"/>
 <script defer="" src="/helpline-config.js"></script>
+<script defer="" src="/menu.js"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://fairgodads.com.au/#organization","name":"Fair Go Dads","url":"https://fairgodads.com.au/","logo":"https://fairgodads.com.au/images/logo-400.jpg","description":"Free Australian family law information website and helpline for separated dads. General information only, not legal advice and not a law firm.","email":"help@fairgodads.com.au","areaServed":{"@type":"Country","name":"Australia"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"help@fairgodads.com.au","areaServed":"AU","availableLanguage":"English"}}</script>
 <!-- i18n:hreflang -->
 <link rel="alternate" hreflang="en-AU" href="https://fairgodads.com.au/sources.html">
@@ -29,20 +30,21 @@
 <body>
 <a class="skip" href="#main">Ir al contenido principal</a>
 <p class="danger-strip">¿Está en peligro ahora? Llame al <a href="tel:000">000</a></p>
-<!-- i18n:picker -->
-<nav class="lang-picker" aria-label="Idioma Language"><p class="lang-picker__label"><span aria-hidden="true">🌐</span> Idioma Language</p><ul><li><a href="/sources.html" lang="en-AU" hreflang="en-AU">English</a></li><li><a href="/zh/sources.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></li><li><a href="/ar/sources.html" lang="ar" hreflang="ar">العربية</a></li><li><a href="/vi/sources.html" lang="vi" hreflang="vi">Tiếng Việt</a></li><li><a href="/zh-hant/sources.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></li><li><a href="/pa/sources.html" lang="pa" hreflang="pa">ਪੰਜਾਬੀ</a></li><li><a href="/el/sources.html" lang="el" hreflang="el">Ελληνικά</a></li><li><a href="/it/sources.html" lang="it" hreflang="it">Italiano</a></li><li><a href="/tl/sources.html" lang="fil" hreflang="tl">Filipino</a></li><li><a href="/hi/sources.html" lang="hi" hreflang="hi">हिन्दी</a></li><li><a href="/es/sources.html" lang="es" hreflang="es" aria-current="true">Español</a></li></ul></nav>
-<!-- /i18n:picker -->
 <header class="site"><a class="brand" href="/es/"><picture><source srcset="/images/logo-400.webp" type="image/webp"/><img alt="Fair Go Dads" decoding="async" height="249" src="/images/logo-400.jpg" width="400"/></picture></a>
-<nav aria-label="Menú principal"><ul><li><a href="/es/">Inicio</a></li><li><a href="/es/about.html">Quiénes somos</a></li><li><a href="/es/help.html">Obtener ayuda</a></li><li><a href="/es/wellbeing.html">Cuidarse</a></li><li><a href="/es/disclaimer.html">Aviso legal</a></li><li><a href="/es/privacy.html">Privacidad</a></li><li><a aria-current="page" href="/es/sources.html">Fuentes</a></li></ul></nav></header>
+<!-- i18n:picker -->
+<nav class="lang-picker" aria-label="Idioma Language"><details><summary class="lang-picker__label"><span aria-hidden="true">🌐</span> Idioma Language</summary><ul><li><a href="/sources.html" lang="en-AU" hreflang="en-AU">English</a></li><li><a href="/zh/sources.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></li><li><a href="/ar/sources.html" lang="ar" hreflang="ar">العربية</a></li><li><a href="/vi/sources.html" lang="vi" hreflang="vi">Tiếng Việt</a></li><li><a href="/zh-hant/sources.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></li><li><a href="/pa/sources.html" lang="pa" hreflang="pa">ਪੰਜਾਬੀ</a></li><li><a href="/el/sources.html" lang="el" hreflang="el">Ελληνικά</a></li><li><a href="/it/sources.html" lang="it" hreflang="it">Italiano</a></li><li><a href="/tl/sources.html" lang="fil" hreflang="tl">Filipino</a></li><li><a href="/hi/sources.html" lang="hi" hreflang="hi">हिन्दी</a></li><li><a href="/es/sources.html" lang="es" hreflang="es" aria-current="true">Español</a></li></ul></details></nav>
+<!-- /i18n:picker -->
+<input aria-label="Menú" class="menu-toggle" id="menu-toggle" type="checkbox"/><label class="menu-btn" data-i18n-skip="" for="menu-toggle"><span aria-hidden="true">☰</span> <span class="menu-btn__text">Menú</span></label><button aria-controls="main-nav" aria-expanded="false" class="menu-btn menu-btn--js" data-i18n-skip="" hidden="" type="button"><span aria-hidden="true">☰</span> <span class="menu-btn__text">Menú</span></button>
+<nav aria-label="Menú principal" id="main-nav"><ul><li><a href="/es/">Inicio</a></li><li><a href="/es/about.html">Quiénes somos</a></li><li><a href="/es/help.html">Obtener ayuda</a></li><li><a href="/es/wellbeing.html">Cuidarse</a></li><li><a href="/es/disclaimer.html">Aviso legal</a></li><li><a href="/es/privacy.html">Privacidad</a></li><li><a aria-current="page" href="/es/sources.html">Fuentes</a></li></ul></nav></header>
 <main id="main">
 <section aria-label="Línea de ayuda gratuita de Fair Go Dads" class="helpline-hero helpline-hero--compact">
-<p class="helpline-hero__title">Línea de ayuda gratuita para padres que se separan <span class="badge" data-helpline-badge="">Abre pronto</span></p>
+<p class="helpline-hero__title">Línea de ayuda gratuita para padres que se separan</p>
 <p class="helpline-hero__number"><a aria-label="Llame a la línea de ayuda de Fair Go Dads al 0485 000 344" href="tel:+61485000344">0485 000 344</a></p>
 <div class="helpline-hero__actions">
 <a class="btn btn--call" href="tel:+61485000344">Llamar al 0485 000 344</a>
 <button aria-disabled="true" class="btn btn--online" data-helpline-online="" data-live-label="Hable con nosotros en línea" data-opening-label="Abriendo el chat…" disabled="" type="button">Hable con nosotros en línea <span class="badge badge--soft" data-helpline-badge="">Abre pronto</span></button>
 </div>
-<p class="helpline-hero__status"><span data-live-text="Gratuito, 24/7. Solo información general, no asesoramiento legal.">Nuestra línea de ayuda gratuita está en pruebas y abrirá pronto.</span> En una emergencia, llame al <a href="tel:000">000</a>.</p>
+<p class="helpline-hero__status"><span data-live-text="Gratuito, 24/7. Solo información general, no asesoramiento legal.">Gratuito, 24/7. Solo información general, no asesoramiento legal.</span> En una emergencia, llame al <a href="tel:000">000</a>.</p>
 <p class="ai-note">Fair Go Dads utiliza un asistente automático de inteligencia artificial (IA). Solo ofrece información general.</p>
 </section><aside aria-label="Aviso sobre la traducción" class="i18n-notice"><p><strong>Traducción asistida por máquina.</strong> Esta página se tradujo con ayuda de traducción automática (inteligencia artificial) y todavía no la ha revisado un traductor profesional. Si hay alguna diferencia, prevalece la versión en inglés. <a href="/sources.html" lang="en-AU">Leer esta página en inglés (English)</a></p><p>Por ahora, la línea de ayuda de Fair Go Dads funciona solo en inglés. Para recibir ayuda en su idioma, llame a TIS National (Servicio de Traducción e Interpretación) al <bdi dir="ltr"><a href="tel:131450">131 450</a></bdi> (las 24 horas del día). Pida que le comuniquen, con la ayuda de un intérprete, con un servicio como Legal Aid (asistencia jurídica), MensLine o 1800RESPECT; deles el nombre y el número de teléfono del servicio. Normalmente es gratuito para usted.</p></aside>
 <h1>Fuentes</h1>
@@ -63,5 +65,6 @@
 </main>
 <footer><p><strong>Solo información general, no asesoramiento legal.</strong> Fair Go Dads no es un bufete de abogados. Para recibir asesoramiento sobre su situación, hable con un abogado o con Legal Aid (asistencia jurídica). <a href="/es/disclaimer.html">Aviso legal</a> · <a href="/es/privacy.html">Privacidad</a></p>
 <p>Información vigente al 19 de octubre de 2026.</p></footer>
+<a class="call-bar" href="tel:+61485000344">Llamar al 0485 000 344</a>
 </body>
 </html>

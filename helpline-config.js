@@ -6,11 +6,16 @@
  *                    the online button turns on and (on tap) loads the ElevenLabs widget:
  *                      <elevenlabs-convai agent-id="AGENT_ID"></elevenlabs-convai>
  *                      <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+ * NOTE 2026-10-22: CHAT_ENABLED = false overrides the above; with LIVE = true only the phone wording goes live.
  * Only flip LIVE after the go-live test bank passes and Damien approves (PLAN.md, Helpline number).
  */
 var FGD_HELPLINE = {
-  LIVE: false,
-  AGENT_ID: "agent_9901m59r2z6hf519thq7s3p317jz", // ElevenLabs: Fair Go Dads Helpline (TEST)
+  LIVE: true,
+  // Online chat is switched OFF (2026-10-22): no agent is configured, so nothing can load the TEST
+  // agent. "Talk to us online" stays disabled with "Opening soon" even when LIVE = true.
+  // Re-enabling chat is a separate, reviewed change (set CHAT_ENABLED and a PROD agent id together).
+  CHAT_ENABLED: false,
+  AGENT_ID: "",
   WIDGET_SRC: "https://unpkg.com/@elevenlabs/convai-widget-embed"
 };
 
@@ -18,8 +23,10 @@ var FGD_HELPLINE = {
   var cfg = FGD_HELPLINE;
   function each(sel, fn) { Array.prototype.forEach.call(document.querySelectorAll(sel), fn); }
 
+  function chatOn() { return cfg.CHAT_ENABLED === true && /^agent_/.test(cfg.AGENT_ID || ""); }
+
   function loadWidget() {
-    if (document.querySelector("elevenlabs-convai")) return;
+    if (!chatOn() || document.querySelector("elevenlabs-convai")) return;
     var w = document.createElement("elevenlabs-convai");
     w.setAttribute("agent-id", cfg.AGENT_ID);
     document.body.appendChild(w);
@@ -31,9 +38,13 @@ var FGD_HELPLINE = {
   function init() {
     if (cfg.LIVE !== true) return; // default HTML is the safe "opening soon" state
     document.documentElement.classList.add("helpline-live");
-    each("[data-helpline-badge]", function (el) { el.parentNode.removeChild(el); });
+    each("[data-helpline-badge]", function (el) {
+      if (!chatOn() && el.closest("[data-helpline-online]")) return; // chat off: keep its "Opening soon"
+      el.parentNode.removeChild(el);
+    });
     each("[data-live-text]", function (el) { el.textContent = el.getAttribute("data-live-text"); });
     each("[data-live-content]", function (el) { el.setAttribute("content", el.getAttribute("data-live-content")); });
+    if (!chatOn()) return; // chat off: button stays disabled, nothing loaded from ElevenLabs
     each("[data-helpline-online]", function (btn) {
       btn.disabled = false;
       btn.removeAttribute("aria-disabled");

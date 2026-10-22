@@ -270,3 +270,150 @@ html:lang(zh-Hans) body,html:lang(zh-Hant) body{line-height:1.7}
 [dir=rtl] .btn{unicode-bidi:isolate}
 /* Very narrow phones (<368px): shrink the big helpline number so it never forces sideways scrolling */
 @media(max-width:23rem){.helpline-hero__number a,.helpline-hero--compact .helpline-hero__number a{font-size:10vw}}
+
+/* ===== Design review 2026-10-22: call-first layout ===== */
+/* Language: one dropdown */
+.lang-picker{padding:.35rem 1.25rem}
+.lang-picker details{position:relative}
+.lang-picker summary.lang-picker__label{display:inline-flex;align-items:center;gap:.35rem;margin:0;cursor:pointer;min-height:2.4rem;padding:.1rem .8rem;border:2px solid var(--teal);border-radius:999px;background:var(--white);list-style:none}
+.lang-picker summary::-webkit-details-marker{display:none}
+.lang-picker summary::after{content:"▾";font-size:.85em}
+.lang-picker summary:focus{outline:3px solid var(--focus);outline-offset:2px}
+.lang-picker details[open] ul{margin-top:.45rem}
+@media(max-width:36rem){.lang-picker{padding:.35rem .9rem}}
+/* Main menu: hamburger on small screens */
+.menu-toggle{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.menu-btn{display:none}
+@media(max-width:48rem){
+  header.site{padding:.55rem 1rem;justify-content:space-between}
+  .brand img{height:44px}
+  .menu-btn{display:inline-flex;align-items:center;gap:.4rem;min-height:2.75rem;padding:.3rem .9rem;border:2px solid var(--cream);border-radius:999px;color:var(--cream);font-weight:800;cursor:pointer}
+  .menu-toggle:focus-visible + .menu-btn{outline:3px solid var(--focus-on-dark);outline-offset:3px}
+  header.site nav{display:none;flex-basis:100%}
+  .menu-toggle:checked ~ nav{display:block}
+  header.site nav ul{flex-direction:column;gap:.5rem}
+}
+/* Home headline sits inside the helpline box */
+.helpline-hero h1{font-size:1.45rem;margin:0 0 .5rem}
+@media(min-width:48rem){.helpline-hero h1{font-size:2rem}}
+.cards .card h3{margin:0}
+/* Call is the only primary button; online chat is a small text link */
+.btn--online,.btn--online[disabled]{background:none;border:0;min-height:2.75rem;padding:.2rem .1rem;font-size:.95rem;font-weight:700;color:var(--teal-deep);text-decoration:underline;text-underline-offset:.15em}
+.btn--online[disabled]{color:var(--ink)}
+@media(max-width:36rem){.helpline-hero__actions .btn--online{flex:0 1 auto;font-size:.95rem}}
+/* AI note: darker text for WCAG AA */
+.helpline-hero .ai-note{color:var(--ink)}
+.helpline-hero .note{margin:.5rem 0;padding:.5rem .75rem;font-size:.95rem}
+/* Sticky call bar (mobile) */
+.call-bar{display:none}
+@media(max-width:48rem){
+  .call-bar{display:flex;align-items:center;justify-content:center;position:fixed;left:0;right:0;bottom:0;z-index:50;min-height:3.4rem;padding:.5rem 1rem calc(.5rem + env(safe-area-inset-bottom));background:var(--teal-deep);color:var(--white);font-weight:800;font-size:1.1rem;text-decoration:none;box-shadow:0 -4px 14px rgba(22,56,56,.25)}
+  .call-bar:focus{outline:3px solid var(--focus-on-dark);outline-offset:-5px}
+  body{padding-bottom:4.2rem}
+}
+[dir=rtl] .call-bar{direction:rtl;unicode-bidi:isolate}
+@media(max-width:36rem){
+  body{position:relative}
+  .danger-strip{padding-right:8.5rem}
+  .lang-picker{position:absolute;top:0;right:.5rem;padding:.2rem 0;background:none;border:0;z-index:40}
+  .lang-picker summary.lang-picker__label{min-height:2.2rem;padding:0 .65rem;font-size:.9rem}
+  .lang-picker details[open] ul{position:absolute;right:0;top:100%;background:var(--cream-warm);border:2px solid var(--gold);border-radius:var(--radius);padding:.5rem;width:16rem;box-shadow:var(--shadow)}
+  [dir=rtl] .lang-picker{right:auto;left:.5rem}
+  [dir=rtl] .danger-strip{padding-right:1.25rem;padding-left:8.5rem}
+  [dir=rtl] .lang-picker details[open] ul{right:auto;left:0}
+  main{padding-top:.9rem}
+  .helpline-hero{padding:.85rem 1rem .9rem}
+  .helpline-hero h1{font-size:1.2rem;margin:0 0 .35rem}
+  .helpline-hero__title{font-size:1rem}
+  .helpline-hero__actions{margin:.5rem 0 .4rem}
+}
+@media(max-width:36rem){
+  header.site{padding:.4rem 1rem}
+  .brand img{height:38px}
+  .menu-btn{min-height:2.5rem;padding:.2rem .8rem}
+  .helpline-hero__number a{font-size:clamp(2.1rem,9vw,3.4rem)}
+}
+@media(max-width:36rem){:lang(fil) .helpline-hero h1{font-size:1.05rem}:lang(fil) .helpline-hero__title{font-size:.95rem}}
+@media(max-width:36rem){
+  .danger-strip{padding-right:7.4rem;font-size:.9rem}
+  [dir=rtl] .danger-strip{padding-right:.9rem;padding-left:7.4rem}
+  .lang-picker summary.lang-picker__label{max-width:6.8rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:block;line-height:2.1rem}
+  :lang(fil) .helpline-hero{padding-top:.7rem}
+  :lang(fil) .helpline-hero__number a{font-size:2rem}
+}
+@media(max-width:36rem){
+  .danger-strip{padding-right:8.8rem}
+  [dir=rtl] .danger-strip{padding-right:.9rem;padding-left:8.8rem}
+  .lang-picker summary.lang-picker__label{max-width:8.3rem}
+}
+@media(max-width:36rem){
+  .danger-strip{padding-right:7.6rem}
+  [dir=rtl] .danger-strip{padding-right:.9rem;padding-left:7.6rem}
+  .lang-picker summary.lang-picker__label{max-width:7.1rem;font-size:.8rem;padding:0 .55rem}
+}
+[dir=rtl] a.call-bar[href^="tel:"]{direction:rtl;unicode-bidi:isolate}
+/* ===== Fix 2 (2026-10-22): JS menu button, tighter mobile helpline box, desktop language ===== */
+button.menu-btn{font:inherit;background:none}
+.menu-btn[hidden],.menu-toggle[hidden]{display:none!important}
+@media(max-width:48rem){
+  .menu-js header.site nav{display:none}
+  .menu-js header.site nav.is-open{display:block}
+  .menu-btn--js:focus{outline:3px solid var(--focus-on-dark);outline-offset:3px}
+}
+@media(max-width:36rem){
+  main{padding-top:.6rem}
+  .helpline-hero{padding:.6rem .9rem .75rem;margin-bottom:1rem}
+  .helpline-hero h1,:lang(fil) .helpline-hero h1{font-size:1.05rem;line-height:1.25;margin:0 0 .2rem}
+  .helpline-hero__title,:lang(fil) .helpline-hero__title{font-size:.9rem;line-height:1.25;gap:.2rem .45rem}
+  .helpline-hero__title .badge{font-size:.68rem;padding:.1rem .45rem}
+  .helpline-hero p.helpline-hero__number{margin:.15rem 0 0}
+  .helpline-hero__number a,:lang(fil) .helpline-hero__number a{font-size:1.9rem}
+  .helpline-hero__actions{margin:.35rem 0 .3rem;gap:.3rem}
+  .helpline-hero__actions .btn--call{min-height:2.75rem;padding:.4rem .8rem}
+  :lang(ar) .helpline-hero h1,:lang(pa) .helpline-hero h1,:lang(hi) .helpline-hero h1{line-height:1.35}
+}
+/* Desktop: language dropdown sits in the header row instead of its own strip */
+@media(min-width:48.01rem){
+  body{position:relative}
+  .lang-picker{position:absolute;right:1.25rem;top:calc(var(--strip-h,2.2rem) + 1.1rem);padding:0;background:none;border:0;z-index:40}
+  .lang-picker details[open] ul{position:absolute;right:0;top:100%;background:var(--cream-warm);border:2px solid var(--gold);border-radius:var(--radius);padding:.5rem;width:20rem;box-shadow:var(--shadow);margin-top:.4rem}
+  [dir=rtl] .lang-picker{right:auto;left:1.25rem}
+  [dir=rtl] .lang-picker details[open] ul{right:auto;left:0}
+  header.site{padding-right:12rem}
+  [dir=rtl] header.site{padding-right:1.25rem;padding-left:12rem}
+  .lang-picker summary.lang-picker__label{background:var(--cream);font-size:.9rem}
+}
+/* Language dropdown lives inside the header row (all widths) */
+header.site .lang-picker{position:static;order:3;margin-left:auto;padding:0;background:none;border:0;z-index:40}
+[dir=rtl] header.site .lang-picker{margin-left:0;margin-right:auto}
+header.site .lang-picker details{position:relative}
+header.site .lang-picker summary.lang-picker__label{background:var(--cream);color:var(--teal-dark);border-color:var(--cream);font-size:.9rem;max-width:none;display:inline-flex;line-height:1.2}
+header.site .lang-picker details[open] ul{position:absolute;right:0;left:auto;top:100%;margin-top:.45rem;background:var(--cream-warm);border:2px solid var(--gold);border-radius:var(--radius);padding:.5rem;width:min(20rem,calc(100vw - 2rem));box-shadow:var(--shadow)}
+[dir=rtl] header.site .lang-picker details[open] ul{right:auto;left:0}
+header.site .lang-picker a{color:var(--teal-deep);border-bottom:2px solid var(--teal)}
+header.site .lang-picker a[aria-current]{color:var(--white)}
+header.site nav{order:2}
+header.site .menu-toggle,header.site .menu-btn{order:4}
+header.site #main-nav{order:5}
+@media(min-width:48.01rem){header.site,[dir=rtl] header.site{padding:.85rem 1.25rem}header.site #main-nav{order:2}}
+@media(max-width:48rem){header.site{gap:.5rem}header.site .lang-picker{margin-left:auto}}
+@media(max-width:36rem){
+  .danger-strip,[dir=rtl] .danger-strip{padding:.35rem .9rem}
+  header.site .lang-picker summary.lang-picker__label{max-width:9.5rem;display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:2.1rem;font-size:.8rem;min-height:2.3rem}
+}
+header.site nav.lang-picker{display:block}
+button.menu-btn{font-weight:800}
+/* Home, mobile: the h1 already says it, so the sub-title line collapses to its "Opening soon" badge
+   (text stays in the DOM for screen readers) */
+@media(max-width:36rem){
+  .helpline-hero h1 + .helpline-hero__title{font-size:0;gap:0;margin:0}
+  .helpline-hero h1 + .helpline-hero__title .badge{font-size:.68rem}
+}
+header.site nav.lang-picker{flex-basis:auto;flex-shrink:1;min-width:0}
+header.site{flex-wrap:wrap}
+@media(max-width:36rem){header.site .lang-picker summary.lang-picker__label{max-width:8rem}}
+@media(max-width:36rem){
+  header.site{gap:.4rem;padding:.4rem .75rem}
+  header.site .lang-picker summary.lang-picker__label{max-width:7rem}
+  .menu-btn{padding:.2rem .65rem;gap:.3rem}
+}
