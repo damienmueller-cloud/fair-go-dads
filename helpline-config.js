@@ -36,6 +36,7 @@ var FGD_HELPLINE = {
   }
 
   function init() {
+    if (chatOn()) document.documentElement.classList.add("chat-on");
     if (cfg.LIVE !== true) return; // default HTML is the safe "opening soon" state
     document.documentElement.classList.add("helpline-live");
     each("[data-helpline-badge]", function (el) {

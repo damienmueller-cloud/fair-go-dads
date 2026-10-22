@@ -417,3 +417,52 @@ header.site{flex-wrap:wrap}
   header.site .lang-picker summary.lang-picker__label{max-width:7rem}
   .menu-btn{padding:.2rem .65rem;gap:.3rem}
 }
+/* ===== Fix 3 (2026-10-22): mobile language panel stays inside the viewport ===== */
+@media(max-width:48rem),(max-height:30rem){
+  header.site .lang-picker details{position:static}
+  header.site .lang-picker details[open] ul,[dir=rtl] header.site .lang-picker details[open] ul{position:fixed;left:12px;right:12px;top:var(--lang-top,4.5rem);width:auto;max-width:calc(100vw - 24px);max-height:calc(100vh - var(--lang-top,4.5rem) - 5rem);max-height:calc(100dvh - var(--lang-top,4.5rem) - 5rem);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;margin-top:0;box-sizing:border-box;z-index:60}
+  header.site .lang-picker details[open] ul{display:flex;flex-direction:row;flex-wrap:wrap;gap:.45rem;align-content:flex-start}
+  header.site .lang-picker li{display:block}
+  header.site .lang-picker a{white-space:normal}
+}
+/* ===== Fix 4 (2026-10-22): chat button hidden unless enabled; linked, balanced help cards ===== */
+/* "Talk to us online" + its badge stay hidden until helpline-config.js turns chat on (html.chat-on) */
+[data-helpline-online]{display:none!important}
+html.chat-on [data-helpline-online]{display:inline-flex!important}
+.card{padding:0}
+.card__link{display:flex;flex-direction:column;gap:.35rem;height:100%;box-sizing:border-box;padding:1.15rem 1.2rem 1.2rem;color:inherit;text-decoration:none;border-radius:var(--radius)}
+.card__link h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.2em}
+.card__link h3::after{content:" →"}
+[dir=rtl] .card__link h3::after{content:" ←"}
+.card__link:hover{background:var(--eucalyptus-soft)}
+.card__link:focus{outline:3px solid var(--focus);outline-offset:2px}
+@media(min-width:36rem){.cards > .card:last-child:nth-child(odd){grid-column:1 / -1}}
+/* language panel: never under the sticky Call bar (bar ~3.4rem + safe area + gap) */
+@media(max-width:48rem),(max-height:30rem){
+  header.site .lang-picker details[open] ul,[dir=rtl] header.site .lang-picker details[open] ul{max-height:calc(100vh - var(--lang-top,4.5rem) - 4.5rem - env(safe-area-inset-bottom));max-height:calc(100dvh - var(--lang-top,4.5rem) - 4.5rem - env(safe-area-inset-bottom));overflow-y:auto}
+}
+/* ===== Fix 5 (2026-10-22): landscape-safe language panel; tighter hero on very small phones ===== */
+@media(max-width:48rem),(max-height:30rem){
+  header.site .lang-picker details[open] ul,[dir=rtl] header.site .lang-picker details[open] ul{max-height:calc(100vh - var(--lang-top,4.5rem) - 4.5rem - env(safe-area-inset-bottom));max-height:calc(100dvh - var(--lang-top,4.5rem) - 4.5rem - env(safe-area-inset-bottom));min-height:0;overflow-y:auto}
+}
+@media(max-height:30rem) and (min-width:48.01rem){
+  header.site .lang-picker details{position:static}
+  header.site .lang-picker details[open] ul,[dir=rtl] header.site .lang-picker details[open] ul{position:fixed;left:auto;right:12px;width:min(24rem,calc(100vw - 24px));top:var(--lang-top,4.5rem);margin-top:0;z-index:60}
+  [dir=rtl] header.site .lang-picker details[open] ul{right:auto;left:12px}
+}
+@media(max-width:22rem){
+  main .helpline-hero{padding-top:.4rem;padding-bottom:.5rem}
+  main .helpline-hero h1,main .helpline-hero h1:lang(fil){margin:0 0 .1rem}
+  main .helpline-hero p.helpline-hero__number{margin:.05rem 0 .2rem}
+  main .helpline-hero .helpline-hero__number a{font-size:1.7rem}
+  main .helpline-hero .btn{margin-top:.15rem}
+}
+@media(max-width:22rem){
+  header.site{gap:.3rem;padding:.35rem .5rem}
+  header.site nav.lang-picker{flex:0 0 auto}
+  header.site .brand img{width:auto;height:2.1rem}
+  header.site .lang-picker summary.lang-picker__label{max-width:6.8rem;font-size:.75rem;padding:0 .45rem;min-height:2.2rem;line-height:2rem}
+  header.site .menu-btn{padding:.15rem .5rem;font-size:.9rem;white-space:nowrap}
+  header.site #main-nav{flex-basis:100%}
+  main .helpline-hero .btn--call{padding-top:.5rem;padding-bottom:.5rem}
+}
